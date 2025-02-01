@@ -15,6 +15,7 @@ namespace AzureApp.Controllers
 
         public IActionResult Index()
         {
+            string Username = "Admin";
             return View();
         }
 
