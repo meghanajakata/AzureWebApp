@@ -64,21 +64,4 @@ jobs:
         with:
           app-name: 'MeghanaGitApp'
           slot-name: 'Production'
-          package: .
-          
-  swap:
-    runs-on: windows-latest
-    needs: deploy
-    steps:
-      - name: Swap Staging to Production
-        uses: azure/CLI@v1
-        with:
-          azcliversion: latest
-          inlinescript: |
-            az webapp deployment slot swap \
-              --resource-group meghana.jakata-ResourceGroup \
-              --name MeghanaGitApp \
-              --slot stage
-              --target-slot production
-            
-  
+          package: .  
